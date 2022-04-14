@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import '../node_modules/normalize.css'
+
+// Vue.prototype.$EventBus = new Vue();
 
 Vue.config.productionTip = false
 
