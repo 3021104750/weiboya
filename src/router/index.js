@@ -166,7 +166,7 @@ const routes = [
 
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: 'weibo',
   routes,
   // scrollBehavior(to, from, savedPosition) {
