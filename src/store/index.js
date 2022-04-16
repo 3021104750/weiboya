@@ -2,9 +2,9 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 // import axios from 'axios';
 import createVuexAlong from 'vuex-along';
-import hotNewsData from '../assets/json/mainMiddleHot/hotNewsData.json';
-import wenyuData from '../assets/json/mainMiddleHot/wenyuData.json';
-import mainRightData from '../assets/json/mainRight/mainRightData.json';
+import hotNewsData from '/src/assets/json/mainMiddleHot/hotNewsData.json';
+import wenyuData from '/src/assets/json/mainMiddleHot/wenyuData.json';
+import mainRightData from '/src/assets/json/mainRight/mainRightData.json';
 
 Vue.use(Vuex);
 
