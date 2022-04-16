@@ -17,12 +17,14 @@
             v-for="item in myWeiboPics"
             :key="item.imgId"
           >
-            <img
-              :src="item.uploadImg"
-              alt="网络错误，无法显示图片！"
-              :data-flag="`${item.imgFlag}`"
-              @click="scalePic($event)"
-            />
+            <div v-lazy-container="{ selector: 'img' }">
+              <img
+                :data-src="item.uploadImg"
+                alt="网络错误，无法显示图片！"
+                :data-flag="`${item.imgFlag}`"
+                @click="scalePic($event)"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -128,7 +128,9 @@
       </form>
       <div class="hint" ref="myHint"></div>
       <div class="previewProtrait">
-        <img :src="protraitValue" alt="网络错误，无法显示图片！" />
+        <div v-lazy-container="{ selector: 'img' }">
+          <img :data-src="protraitValue" alt="网络错误，无法显示图片！" />
+        </div>
       </div>
     </div>
   </div>

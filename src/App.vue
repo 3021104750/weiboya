@@ -18,7 +18,7 @@
     </div>
     <video
       class="earthBackground"
-      src="images/earthBackground.mp4"
+      src="./assets/images/earthBackground.mp4"
       autoplay
       loop
       preload="true"

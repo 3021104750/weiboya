@@ -34,12 +34,14 @@
               v-for="pic in item.dataList.picsDataList"
               :key="pic.imgId"
             >
-              <img
-                :src="pic.uploadImg"
-                alt="网络错误，无法显示图片！"
-                :data-flag="`${pic.imgFlag}`"
-                @click="scalePic($event)"
-              />
+              <div v-lazy-container="{ selector: 'img' }">
+                <img
+                  :data-src="pic.uploadImg"
+                  alt="网络错误，无法显示图片！"
+                  :data-flag="`${pic.imgFlag}`"
+                  @click="scalePic($event)"
+                />
+              </div>
             </div>
           </div>
         </div>

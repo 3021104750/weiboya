@@ -10,7 +10,12 @@
         <header class="news-header">
           <div class="header-info">
             <a href="javascript:;" class="header-info-protrait">
-              <img :src="item.headerProtrait" alt="网络错误，无法显示图片！" />
+              <div v-lazy-container="{ selector: 'img' }">
+                <img
+                  :data-src="item.headerProtrait"
+                  alt="网络错误，无法显示图片！"
+                />
+              </div>
             </a>
             <div class="header-info-username">
               {{ item.headerUsername }}
@@ -30,12 +35,14 @@
                 v-for="item3 in item2.row"
                 :key="item3.id"
               >
-                <img
-                  :src="item3.imgPath"
-                  alt="网络错误，无法显示图片！"
-                  :data-flag="`${item3.imgFlag}`"
-                  @click="scalePic($event)"
-                />
+                <div v-lazy-container="{ selector: 'img' }">
+                  <img
+                    :data-src="item3.imgPath"
+                    alt="网络错误，无法显示图片！"
+                    :data-flag="`${item3.imgFlag}`"
+                    @click="scalePic($event)"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -95,10 +102,12 @@
                 <!-- 评论者的头像 -->
                 <div class="comments-list-header">
                   <a href="javascript:;" class="comments-list-header-protrait">
-                    <img
-                      :src="item4.postUsernameProtrait"
-                      alt="网络错误，无法显示图片！"
-                    />
+                    <div v-lazy-container="{ selector: 'img' }">
+                      <img
+                        :data-src="item4.postUsernameProtrait"
+                        alt="网络错误，无法显示图片！"
+                      />
+                    </div>
                   </a>
                 </div>
                 <div class="comments-list-body">
