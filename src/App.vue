@@ -18,7 +18,7 @@
     </div>
     <video
       class="earthBackground"
-      src="images/weibo_login.mp4"
+      src="images/earthBackground.mp4"
       autoplay
       loop
       preload="true"
