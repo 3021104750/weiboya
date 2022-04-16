@@ -6,10 +6,7 @@
         <div class="wenyu-header">
           <div class="header-info">
             <a href="javascript:;" class="header-info-protrait">
-              <img
-                :src="rootPath + item.headerProtrait"
-                alt="网络错误，无法显示图片！"
-              />
+              <img :src="item.headerProtrait" alt="网络错误，无法显示图片！" />
             </a>
             <div class="header-info-username">{{ item.headerUsername }}</div>
           </div>
@@ -28,7 +25,7 @@
                 :key="item3.id"
               >
                 <img
-                  :src="rootPath + item3.imgPath"
+                  :src="item3.imgPath"
                   alt="网络错误，无法显示图片！"
                   :data-flag="`${item3.imgFlag}`"
                   @click="scalePic($event)"
@@ -131,7 +128,7 @@ export default {
   name: 'LeftWenyu',
   data() {
     return {
-      rootPath: process.env.BASE_URL,
+      // rootPath: process.env.BASE_URL,
       commentsId: 1,
       rememberScroll: 0 // 记录滚动条位置
     };

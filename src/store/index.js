@@ -1,9 +1,9 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import axios from 'axios'
-import createVuexAlong from 'vuex-along'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import axios from 'axios';
+import createVuexAlong from 'vuex-along';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 // MainRight.vue
 const MAINRIGHT = {
@@ -42,16 +42,16 @@ const MAINRIGHT = {
     getData(context) {
       axios.get('/data/mainRight/mainRightData.json').then(value => {
         context.commit("initData", value.data[context.state.dataCount]);
-      })
+      });
     },
     // 获取右边栏热搜 json数据长度
     getDataLength(context) {
       axios.get('/data/mainRight/mainRightData.json').then(value => {
         context.commit("initDataLength", value.data.length);
-      })
+      });
     }
   },
-}
+};
 
 // LeftHotNews.vue
 const MAINMIDDLEHOTNEWS = {
@@ -97,7 +97,7 @@ const MAINMIDDLEHOTNEWS = {
           arr.unshift(newCommentsData); // 每次添加新评论 添加到评论区的开头
           item.commentsData = arr;
         }
-      })
+      });
     },
     // 点击删除的评论
     removeComments(state, value) {
@@ -110,9 +110,9 @@ const MAINMIDDLEHOTNEWS = {
               // 找到删除评论的那条在第几个位置 splice 掉它
               item.commentsData.splice(item.commentsData.indexOf(contents), 1);
             }
-          })
+          });
         }
-      })
+      });
     }
   },
 
@@ -120,10 +120,10 @@ const MAINMIDDLEHOTNEWS = {
     getData(context) {
       axios.get('/data/mainMiddleHot/hotNewsData.json').then(value => {
         context.commit('initData', value.data);
-      })
+      });
     }
   }
-}
+};
 
 // LeftWenyu.vue
 const MAINMIDDLEWENYU = {
@@ -168,7 +168,7 @@ const MAINMIDDLEWENYU = {
           arr.unshift(newCommentsData);
           item.commentsData = arr;
         }
-      })
+      });
     },
     // 点击删除的评论
     removeComments(state, value) {
@@ -181,9 +181,9 @@ const MAINMIDDLEWENYU = {
               // 找到删除评论的那条在第几个位置 splice 掉它
               item.commentsData.splice(item.commentsData.indexOf(contents), 1);
             }
-          })
+          });
         }
-      })
+      });
     }
   },
 
@@ -191,10 +191,10 @@ const MAINMIDDLEWENYU = {
     getData(context) {
       axios.get('/data/mainMiddleHot/wenyuData.json').then(value => {
         context.commit('initData', value.data);
-      })
+      });
     }
   }
-}
+};
 
 // postWeibo 发布微博
 const MYWEIBO = {
@@ -218,7 +218,7 @@ const MYWEIBO = {
       let obj = {
         removeButtonShowFlag: true, // 是否显示删除按钮
         dataList: state.dataList // 微博的信息 （textarea 和 picsDataList）
-      }
+      };
       state.weiboDataAll.unshift(obj); // 每次发布的微博放到总共微博的第一条
     },
     // 删除微博 from LeftMyWeibo.vue
@@ -228,19 +228,19 @@ const MYWEIBO = {
         if (item.dataList.weiboId === value) {
           state.weiboDataAll.splice(index, 1);
         }
-      })
+      });
       // 判断是否删除了最后一个微博 是的话 添加一个提示到weiboDataAll里 (还没有发布一条微博哦，快去发布吧！)
       if (state.weiboDataAll.length === 0) {
         let obj = {
           removeButtonShowFlag: false, dataList: { textarea: '还没有发布一条微博哦，快去发布吧！', firstFlag: true }
-        }
+        };
         state.weiboDataAll.push(obj);
         state.weiboId = 1;
       }
 
     }
   }
-}
+};
 export default new Vuex.Store({
   plugins: [createVuexAlong()],
   modules: {
@@ -249,4 +249,4 @@ export default new Vuex.Store({
     MAINMIDDLEWENYU,
     MYWEIBO
   }
-})
+});

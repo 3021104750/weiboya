@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   // 默认路径
@@ -119,7 +119,7 @@ const routes = [
     },
     beforeEnter: (to, from, next) => {
       to.query.previousPath = from.path;
-      next()
+      next();
     }
   },
 
@@ -132,7 +132,7 @@ const routes = [
     },
     beforeEnter: (to, from, next) => {
       to.query.previousPath = from.path;
-      next()
+      next();
     }
   },
 
@@ -162,11 +162,10 @@ const routes = [
       Setting: () => import('@/views/sliderUserBar/Setting.vue')
     }
   }
-]
+];
 
 
 const router = new VueRouter({
-  mode: 'hash',
   base: 'weibo',
   routes,
   // scrollBehavior(to, from, savedPosition) {
@@ -181,9 +180,9 @@ const router = new VueRouter({
   //     }, 0);
   //   });
   // }
-})
+});
 
-export default router
+export default router;
 
 router.beforeEach((to, from, next) => {
   // 当进入到这些页面时，禁止页面滚动
@@ -193,4 +192,4 @@ router.beforeEach((to, from, next) => {
     document.body.style.overflow = 'visible';
   }
   next();
-})
+});
