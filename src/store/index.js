@@ -1,7 +1,10 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import axios from 'axios';
+// import axios from 'axios';
 import createVuexAlong from 'vuex-along';
+import hotNewsData from '@/assets/json/mainMiddleHot/hotNewsData.json';
+import wenyuData from '@/assets/json/mainMiddleHot/wenyuData.json';
+import mainRightData from '@/assets/json/mainRight/mainRightData.json';
 
 Vue.use(Vuex);
 
@@ -40,15 +43,17 @@ const MAINRIGHT = {
   actions: {
     // 获取右边栏热搜 json数据
     getData(context) {
-      axios.get('../assets/json/mainRight/mainRightData.json').then(value => {
-        context.commit("initData", value.data[context.state.dataCount]);
-      });
+      context.commit('initData', mainRightData[context.state.dataCount]);
+      // axios.get('../assets/json/mainRight/mainRightData.json').then(value => {
+      //   context.commit("initData", value.data[context.state.dataCount]);
+      // });
     },
     // 获取右边栏热搜 json数据长度
     getDataLength(context) {
-      axios.get('../assets/json/mainRight/mainRightData.json').then(value => {
-        context.commit("initDataLength", value.data.length);
-      });
+      context.commit('initDataLength', mainRightData.length);
+      // axios.get('../assets/json/mainRight/mainRightData.json').then(value => {
+      //   context.commit("initDataLength", value.data.length);
+      // });
     }
   },
 };
@@ -118,9 +123,10 @@ const MAINMIDDLEHOTNEWS = {
 
   actions: {
     getData(context) {
-      axios.get('../assets/json/mainMiddleHot/hotNewsData.json').then(value => {
-        context.commit('initData', value.data);
-      });
+      context.commit('initData', hotNewsData);
+      // axios.get('../assets/json/mainMiddleHot/hotNewsData.json').then(value => {
+      //   context.commit('initData', value.data);
+      // });
     }
   }
 };
@@ -189,9 +195,10 @@ const MAINMIDDLEWENYU = {
 
   actions: {
     getData(context) {
-      axios.get('../assets/json/mainMiddleHot/wenyuData.json').then(value => {
-        context.commit('initData', value.data);
-      });
+      context.commit('initData', wenyuData);
+      // axios.get('../assets/json/mainMiddleHot/wenyuData.json').then(value => {
+      //   context.commit('initData', value.data);
+      // });
     }
   }
 };
