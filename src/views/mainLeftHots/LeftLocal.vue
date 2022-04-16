@@ -1,5 +1,5 @@
 <template>
-  <div class="leftlocal">leftLocal</div>
+  <div class="leftlocal">未敲代码，同城内容暂定。。。</div>
 </template>
 
 <script>

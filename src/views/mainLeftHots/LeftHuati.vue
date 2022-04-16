@@ -1,5 +1,5 @@
 <template>
-  <div class="lefthuati">leftHuati</div>
+  <div class="lefthuati">未敲代码，话题内容暂定。。。</div>
 </template>
 
 <script>

@@ -281,9 +281,13 @@ export default {
         height: 28px;
         font-size: 12px;
         border-radius: 15px;
-        border: 1px solid #ff8200;
+        border: 1px solid #333;
         color: #ff8200;
         cursor: pointer;
+        &:hover {
+          border: 1px solid #ff8200;
+        }
+
         .icon-point-right:before {
           content: '\ea04';
           margin-right: 4px;

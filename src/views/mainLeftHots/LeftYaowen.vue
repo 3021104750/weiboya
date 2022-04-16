@@ -1,5 +1,5 @@
 <template>
-  <div class="leftyaowen">leftYaowen</div>
+  <div class="leftyaowen">未敲代码，要闻内容暂定。。。</div>
 </template>
 
 <script>

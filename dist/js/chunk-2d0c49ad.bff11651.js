@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0c49ad"],{"3c18":function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",{staticClass:"leftlocal"},[e._v("未敲代码，同城内容暂定。。。")])},l=[],a={name:"LeftLocal"},s=a,u=t("2877"),o=Object(u["a"])(s,c,l,!1,null,null,null);n["default"]=o.exports}}]);
+//# sourceMappingURL=chunk-2d0c49ad.bff11651.js.map

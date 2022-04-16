@@ -1,6 +1,7 @@
 <template>
   <div class="setting">
     <div class="setting-box">
+      未敲代码，设置内容暂定。。。
       <div class="cancel" @click="cancel">返回</div>
     </div>
   </div>
