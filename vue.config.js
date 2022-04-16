@@ -1,4 +1,3 @@
-const BASE_URL = process.env.NODE_ENV === "production" ? "/weibo/" : "/";
 module.exports = {
-  publicPath: BASE_URL,
-}
+  publicPath: process.env.NODE_ENV === "production" ? "/weiboya/" : "/"
+};
