@@ -40,13 +40,13 @@ const MAINRIGHT = {
   actions: {
     // 获取右边栏热搜 json数据
     getData(context) {
-      axios.get('./data/mainRight/mainRightData.json').then(value => {
+      axios.get('/json/mainRight/mainRightData.json').then(value => {
         context.commit("initData", value.data[context.state.dataCount]);
       });
     },
     // 获取右边栏热搜 json数据长度
     getDataLength(context) {
-      axios.get('./data/mainRight/mainRightData.json').then(value => {
+      axios.get('/json/mainRight/mainRightData.json').then(value => {
         context.commit("initDataLength", value.data.length);
       });
     }
@@ -118,7 +118,7 @@ const MAINMIDDLEHOTNEWS = {
 
   actions: {
     getData(context) {
-      axios.get('./data/mainMiddleHot/hotNewsData.json').then(value => {
+      axios.get('/json/mainMiddleHot/hotNewsData.json').then(value => {
         context.commit('initData', value.data);
       });
     }
@@ -189,7 +189,7 @@ const MAINMIDDLEWENYU = {
 
   actions: {
     getData(context) {
-      axios.get('./data/mainMiddleHot/wenyuData.json').then(value => {
+      axios.get('/json/mainMiddleHot/wenyuData.json').then(value => {
         context.commit('initData', value.data);
       });
     }
