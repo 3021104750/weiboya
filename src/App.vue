@@ -16,14 +16,10 @@
         <button>搜索</button>
       </div>
     </div>
-    <video
-      class="earthBackground"
-      src="./assets/images/earthBackground.mp4"
-      autoplay
-      loop
-      preload="true"
-      muted="false"
-    ></video>
+
+    <video class="earthBackground" loop autoplay preload="true" muted="false">
+      <source src="./assets/images/earthBackground.mp4" type="video/mp4" />
+    </video>
     <!-- HeaderBar -->
     <transition name="headerfade">
       <HeaderBar
