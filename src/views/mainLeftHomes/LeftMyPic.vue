@@ -56,8 +56,7 @@ export default {
     }
   },
   activated() {
-    // 获取微博里的所有图片整合到一个数组里
-    console.log(this.weiboDataAll);
+    // // 获取微博里的所有图片整合到一个数组里
     // 先判断weiboDataList里有没有提示信息
     let temp = this.weiboDataAll.some(
       (item) => item.dataList.firstFlag === true

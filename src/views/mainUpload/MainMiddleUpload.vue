@@ -440,7 +440,8 @@ export default {
           border-radius: 8px;
           border: 1px solid #333;
           color: #000;
-          background: url('/images/addImgFile.webp') center/100% no-repeat;
+          background: url('../../assets/images/addImgFile.webp') center/100%
+            no-repeat;
           &:hover {
             border: 1px solid #ff8200;
           }
