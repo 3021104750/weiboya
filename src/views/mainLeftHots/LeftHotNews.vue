@@ -62,7 +62,7 @@
             <div
               class="comments"
               :data-flag="`${item.comments.commentsFlag}`"
-              @click.capture="openCommentsList($event, item.id)"
+              @click.capture="openCommentsList($event)"
             >
               <i class="icon-bubbles3"></i
               ><span>{{ item.comments.commentsNum }}</span>
@@ -169,11 +169,10 @@ export default {
       }
     },
     // 打开和关闭评论区
-    openCommentsList(e, id) {
-      plugins.openCommentsList(e, id);
+    openCommentsList(e) {
+      plugins.openCommentsList(e);
     },
     // 发评论
-
     postComments(e, id) {
       // 判断是否登陆
       let obj = JSON.stringify(sessionStorage);
@@ -248,13 +247,15 @@ export default {
     })
   },
   created() {
-    this.$store.dispatch('MAINMIDDLEHOTNEWS/getData');
+    this.$store.commit('MAINMIDDLEHOTNEWS/initData');
     this.$store.commit('MAINMIDDLEHOTNEWS/initCommentsDataList');
   },
   activated() {
+    // 每次激活页面时，返回之前滚动位置
     window.scrollTo(0, this.rememberScroll);
   },
   beforeRouteLeave(to, from, next) {
+    // 每次离开页面时候，记住离开时滚动位置
     this.rememberScroll = window.scrollY;
     next();
   }

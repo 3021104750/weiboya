@@ -22,12 +22,12 @@ const MAINRIGHT = {
 
   mutations: {
     // 初始化 右边栏热搜内容
-    initData(state, value) {
-      state.data = value;
+    initData(state) {
+      state.data = mainRightData[state.dataCount];
     },
     // 初始化 右边栏热搜内容length
-    initDataLength(state, value) {
-      state.resultLength = value;
+    initDataLength(state) {
+      state.resultLength = mainRightData.length;
     },
     // 点击刷新 右边栏热搜内容
     refreshData(state, valueFromComponent) {
@@ -39,23 +39,21 @@ const MAINRIGHT = {
       }
     },
   },
-
-  actions: {
-    // 获取右边栏热搜 json数据
-    getData(context) {
-      context.commit('initData', mainRightData[context.state.dataCount]);
-      // axios.get('../assets/json/mainRight/mainRightData.json').then(value => {
-      //   context.commit("initData", value.data[context.state.dataCount]);
-      // });
-    },
-    // 获取右边栏热搜 json数据长度
-    getDataLength(context) {
-      context.commit('initDataLength', mainRightData.length);
-      // axios.get('../assets/json/mainRight/mainRightData.json').then(value => {
-      //   context.commit("initDataLength", value.data.length);
-      // });
-    }
-  },
+  // 为了部署 gitee pages 不能使用 ajax 请求数据 改为json数据放在assets里 直接import引入
+  // actions: {
+  // 获取右边栏热搜 json数据
+  // getData(context) {
+  // axios.get('../assets/json/mainRight/mainRightData.json').then(value => {
+  //   context.commit("initData", value.data[context.state.dataCount]);
+  // });
+  // },
+  // 获取右边栏热搜 json数据长度
+  // getDataLength(context) {
+  // axios.get('../assets/json/mainRight/mainRightData.json').then(value => {
+  //   context.commit("initDataLength", value.data.length);
+  // });
+  //   }
+  // },
 };
 
 // LeftHotNews.vue
@@ -68,9 +66,9 @@ const MAINMIDDLEHOTNEWS = {
 
   mutations: {
     // 把获取过来的json数据复制10份 放到一个新数组里
-    initData(state, value) {
+    initData(state) {
       var arr = [];
-      var obj = value[0];
+      var obj = hotNewsData[0];
       for (var i = 0; i < 10; i++) {
         var { ...deepObj } = obj; // deepcopy 下数据
         obj.id++; // 使其里面的id 一次加一
@@ -121,14 +119,14 @@ const MAINMIDDLEHOTNEWS = {
     }
   },
 
-  actions: {
-    getData(context) {
-      context.commit('initData', hotNewsData);
-      // axios.get('../assets/json/mainMiddleHot/hotNewsData.json').then(value => {
-      //   context.commit('initData', value.data);
-      // });
-    }
-  }
+  // 为了部署 gitee pages 不能使用 ajax 请求数据 改为json数据放在assets里 直接import引入
+  // actions: {
+  //   getData(context) {
+  // axios.get('../assets/json/mainMiddleHot/hotNewsData.json').then(value => {
+  //   context.commit('initData', value.data);
+  // });
+  //   }
+  // }
 };
 
 // LeftWenyu.vue
@@ -140,9 +138,9 @@ const MAINMIDDLEWENYU = {
   },
 
   mutations: {
-    initData(state, value) {
+    initData(state) {
       var arr = [];
-      var obj = value[0];
+      var obj = wenyuData[0];
       for (var i = 0; i < 10; i++) {
         var { ...deepObj } = obj; // deepcopy 下数据
         obj.id++; // 使其里面的id 一次加一
@@ -192,15 +190,14 @@ const MAINMIDDLEWENYU = {
       });
     }
   },
-
-  actions: {
-    getData(context) {
-      context.commit('initData', wenyuData);
-      // axios.get('../assets/json/mainMiddleHot/wenyuData.json').then(value => {
-      //   context.commit('initData', value.data);
-      // });
-    }
-  }
+  // 为了部署 gitee pages 不能使用 ajax 请求数据 改为json数据放在assets里 直接import引入
+  // actions: {
+  //   getData(context) {
+  // axios.get('../assets/json/mainMiddleHot/wenyuData.json').then(value => {
+  //   context.commit('initData', value.data);
+  // });
+  //   }
+  // }
 };
 
 // postWeibo 发布微博

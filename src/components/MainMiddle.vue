@@ -1,8 +1,8 @@
 <template>
   <div class="mainmiddle">
-    <router-view name="Home"></router-view>
-    <router-view name="Hot"></router-view>
     <keep-alive>
+      <router-view name="Home"></router-view>
+      <router-view name="Hot"></router-view>
       <router-view name="MainMiddleUpload"></router-view>
     </keep-alive>
   </div>

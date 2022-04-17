@@ -93,7 +93,7 @@ export const plugins = {
     @parmas e: $event
             id: item.id 第几个li里评论的
    */
-  openCommentsList(e, id) {
+  openCommentsList(e) {
     var f = e.target.parentNode.dataset.flag; // 获取自定义属性 判断评论区是否打开
     if (f === 'false') {
       e.target.style.color = '#ff8200';
@@ -104,7 +104,7 @@ export const plugins = {
       }
       f = 'true';
       e.target.parentNode.dataset.flag = f;
-      document.getElementsByClassName('comments-list')[id - 1].style.display =
+      e.target.parentNode.parentNode.nextSibling.style.display =
         'block';
     } else {
       this.hasOpenCommentsList = true;
@@ -116,7 +116,7 @@ export const plugins = {
       }
       f = 'false';
       e.target.parentNode.dataset.flag = f;
-      document.getElementsByClassName('comments-list')[id - 1].style.display =
+      e.target.parentNode.parentNode.nextSibling.style.display =
         'none';
     }
   },
@@ -155,7 +155,7 @@ export const plugins = {
       }
     }
   }
-}
+};
 
 /* 
     获取当前 年月日 和 时分秒
@@ -176,7 +176,7 @@ export const getTime = () => {
   let second = time.getSeconds();
   second = second < 10 ? '0' + second : second;
   return `${year}-${month}-${date} ${hour}:${minute}:${second}`;
-}
+};
 
 /* 
   防抖
@@ -185,16 +185,16 @@ export const getTime = () => {
   @return 返回一个函数 设置定时器返回一个回调
 */
 export const debounce = (fn, delay = 600) => {
-  let timer = null
+  let timer = null;
   return function () {
     if (timer) {
       clearTimeout(timer);
     }
     timer = setTimeout(() => {
       fn.apply(this, arguments);
-    }, delay)
-  }
-}
+    }, delay);
+  };
+};
 
 /* 
   节流 时间戳
@@ -210,8 +210,8 @@ export const throttle = (fn, delay = 600) => {
       fn.apply(this, arguments);
       last = now;
     }
-  }
-}
+  };
+};
 
 /*
   节流 定时器

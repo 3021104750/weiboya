@@ -234,7 +234,7 @@ export default {
     })
   },
   created() {
-    this.$store.dispatch('MAINMIDDLEWENYU/getData');
+    this.$store.commit('MAINMIDDLEWENYU/initData');
     this.$store.commit('MAINMIDDLEWENYU/initCommentsDataList');
   },
   // 返回页面时 回到之前滚动位置

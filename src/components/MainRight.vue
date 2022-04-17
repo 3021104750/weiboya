@@ -31,12 +31,12 @@ export default {
     // 每次点击刷新热搜的时候 节流
     getRefreshData: debounce(function () {
       this.$store.commit('MAINRIGHT/refreshData', this.dataCount);
-      this.$store.dispatch('MAINRIGHT/getData');
+      this.$store.commit('MAINRIGHT/initData');
     }, 250)
   },
   created() {
-    this.$store.dispatch('MAINRIGHT/getData');
-    this.$store.dispatch('MAINRIGHT/getDataLength');
+    this.$store.commit('MAINRIGHT/initData');
+    this.$store.commit('MAINRIGHT/initDataLength');
   }
 };
 </script>
