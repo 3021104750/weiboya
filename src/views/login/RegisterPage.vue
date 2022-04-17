@@ -81,7 +81,7 @@ export default {
       passwordRepeatValue: '', // 重复密码
       genderValue: '', // 性别
       dateOfBirthValue: '', // 出生日期
-      protraitValue: '/logo.png', // 头像
+      protraitValue: '../../assets/logo.png', // 头像
       personalizedSignatureValue: '' // 个性签名
     };
   },

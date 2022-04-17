@@ -65,7 +65,7 @@ export default {
       // 已登陆用户的用户名
       loginUsername: '用户未登陆',
       // 已登陆用户的头像
-      loginUserProtrait: '../assets/logo.png'
+      loginUserProtrait: ''
     };
   },
   props: {
