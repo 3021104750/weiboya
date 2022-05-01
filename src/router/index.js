@@ -61,7 +61,7 @@ const routes = [
   {
     path: '/Home',
     name: 'Home',
-    redirect: '/Home/LeftMyWeibo',
+    // redirect: '/Home/LeftMyWeibo',
     components: {
       Home: () => import('@/views/Home.vue'),
       MainLeftHome: () => import('@/views/MainLeftHome.vue')
@@ -166,7 +166,8 @@ const routes = [
 
 
 const router = new VueRouter({
-  base: 'weibo',
+  mode: 'hash',
+  base: 'weiboya',
   routes,
   // scrollBehavior(to, from, savedPosition) {
   //   // keep-alive 返回缓存页面后记录浏览位置
