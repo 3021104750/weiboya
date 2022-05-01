@@ -27,7 +27,7 @@
   > Css  
   > JavaScript
 * 初始化
-  > normalize.css
+  > normalize.css  
   > 京东初始化（部分代码）
 * 适配方案
   > 无
