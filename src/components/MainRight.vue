@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { debounce } from '@/api/plugins.js';
+import { debounceLater } from '@/api/plugins.js';
 import { mapState } from 'vuex';
 export default {
   name: 'MainRight',
@@ -29,10 +29,10 @@ export default {
   },
   methods: {
     // 每次点击刷新热搜的时候 节流
-    getRefreshData: debounce(function () {
+    getRefreshData: debounceLater(function () {
       this.$store.commit('MAINRIGHT/refreshData', this.dataCount);
       this.$store.commit('MAINRIGHT/initData');
-    }, 250)
+    }, 600)
   },
   created() {
     this.$store.commit('MAINRIGHT/initData');

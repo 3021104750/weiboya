@@ -196,6 +196,28 @@ export const debounce = (fn, delay = 600) => {
   };
 };
 
+/* 防抖 升级版 第一次立即出发 之后防抖
+  @param  fn：回调函数
+          delay：延迟时间
+  @return 返回一个函数，设置定时器返回一个回调。 */
+export const debounceLater = (fn, delay = 600) => {
+  let timer = null;
+  let flag = true;
+  // flag等于true时，立即触发。false时，清除定时器。
+  return function () {
+    if (flag) {
+      fn.apply(this, arguments);
+      flag = false;
+    }
+    if (timer) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(() => {
+      flag = true;
+    }, delay);
+  };
+};
+
 /* 
   节流 时间戳
   @param  fn 回调函数
