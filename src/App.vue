@@ -17,9 +17,12 @@
       </div>
     </div>
 
-    <video class="earthBackground" loop autoplay preload="true" muted="false">
+    <!-- <video class="earthBackground" loop autoplay preload="true" muted="false">
       <source src="./assets/images/earthBackground.mp4" type="video/mp4" />
-    </video>
+    </video> -->
+
+    <!-- vanta.js 背景图-->
+    <div class="vanta-animated-bgc" ref="myVantaBgc"></div>
     <!-- HeaderBar -->
     <transition name="headerfade">
       <HeaderBar
@@ -61,6 +64,9 @@
 import HeaderBar from '@/components/HeaderBar.vue';
 import SliderUserBar from '@/components/SliderUserBar.vue';
 import Main from '@/components/Main.vue';
+
+import * as THREE from 'three/build/three.r119.min.js';
+import BIRDS from 'vanta/src/vanta.birds';
 
 export default {
   data() {
@@ -222,10 +228,6 @@ export default {
         '            佛祖保佑       永无BUG'
       ].join('\n')
     );
-
-    // document
-    //   .querySelector('body')
-    //   .setAttribute('style', 'background-color: #0c0c0c');
   },
   created() {
     document
@@ -234,9 +236,34 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
+    // 设置 vanta.js 3d动态背景图
+    this.vantaEffect = BIRDS({
+      THREE: THREE,
+      el: this.$refs.myVantaBgc, // dom 元素
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      backgroundColor: 0x0c0c0c,
+      color1: 0xd23c29,
+      color2: 0x1986c5,
+      colorMode: 'lerpGradient',
+      birdSize: 0.7,
+      speedLimit: 6.0,
+      separation: 6.0,
+      alignment: 27.0,
+      cohesion: 29.0
+    });
   },
   beforeDestroy() {
     document.querySelector('body').removeAttribute('style');
+    // 组件销毁时，销毁3d动态背景图
+    if (this.vantaEffect) {
+      this.vantaEffect.destroy();
+    }
   },
   destroyed() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -317,8 +344,9 @@ export default {
   }
 }
 
-.earthBackground {
-  height: 330px;
+.vanta-animated-bgc {
+  width: 100%;
+  height: 350px;
   position: absolute;
   top: 0;
   left: 50%;
