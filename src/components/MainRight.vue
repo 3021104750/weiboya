@@ -32,7 +32,7 @@ export default {
     getRefreshData: debounceLater(function () {
       this.$store.commit('MAINRIGHT/refreshData', this.dataCount);
       this.$store.commit('MAINRIGHT/initData');
-    }, 600)
+    }, 200)
   },
   created() {
     this.$store.commit('MAINRIGHT/initData');
