@@ -253,7 +253,7 @@ export default {
       colorMode: 'lerpGradient',
       birdSize: 0.7,
       speedLimit: 4.0,
-      separation: 90.0,
+      separation: 85.0,
       alignment: 27.0,
       cohesion: 29.0
     });
