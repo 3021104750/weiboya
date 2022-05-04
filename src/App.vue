@@ -252,8 +252,8 @@ export default {
       color2: 0x1986c5,
       colorMode: 'lerpGradient',
       birdSize: 0.7,
-      speedLimit: 6.0,
-      separation: 6.0,
+      speedLimit: 4.0,
+      separation: 90.0,
       alignment: 27.0,
       cohesion: 29.0
     });
