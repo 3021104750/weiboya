@@ -16,12 +16,7 @@
         <button>搜索</button>
       </div>
     </div>
-
-    <!-- <video class="earthBackground" loop autoplay preload="true" muted="false">
-      <source src="./assets/images/earthBackground.mp4" type="video/mp4" />
-    </video> -->
-
-    <!-- vanta.js 背景图-->
+    <!-- vanta.js 3动态背景图-->
     <div class="vanta-animated-bgc" ref="myVantaBgc"></div>
     <!-- HeaderBar -->
     <transition name="headerfade">
